@@ -67,7 +67,7 @@ Get Riders
 	endwhile;
 
 
-Get Horces
+Get Horses
 --------------
 *Takes Class ID*
 
