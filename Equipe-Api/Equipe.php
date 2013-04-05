@@ -64,7 +64,7 @@ class Equipe   {
 
     public function have_days() {
 
-        if ($this->current_day + 1 < $this->days_count)
+        if ($this->current_day < $this->days_count)
             return true;
 
         return false;
@@ -88,7 +88,7 @@ class Equipe   {
 
     public function startlist_have_riders() {
 
-        if ($this->current_startlist_rider + 1 < $this->startlist_riders_count)
+        if ($this->current_startlist_rider < $this->startlist_riders_count)
             return true;
 
         return false;
@@ -112,7 +112,7 @@ class Equipe   {
 
     public function resultlist_have_riders() {
 
-        if ($this->current_resultlist_rider + 1 < $this->resultlist_riders_count)
+        if ($this->current_resultlist_rider < $this->resultlist_riders_count)
             return true;
 
         return false;
@@ -136,7 +136,7 @@ class Equipe   {
     }
 
     public function have_riders() {
-        if ($this->current_rider + 1 < $this->riders_count)
+        if ($this->current_rider < $this->riders_count)
             return true;
 
         return false;
@@ -167,9 +167,10 @@ class Equipe   {
     }
 
     public function have_horses() {
-        if ($this->current_horse + 1 < $this->horses_count)
+        if ($this->current_horse < $this->horses_count)
             return true;
 
+        $this->current_horse = 0;
         return false;
 
     }
@@ -177,6 +178,21 @@ class Equipe   {
     public function the_horse() {
 
         return $this->horses[$this->current_horse++];
+
+    }
+
+    public function get_horse($meeting_id, $horse_id) {
+
+        $this->horses = ($this->horses) ? $this->horses : $this->get_horses($meeting_id);
+
+        $the_horse = false;
+        foreach ($this->horses as $horse) {
+            if ($horse->id == $horse_id) {
+                $the_horse = $horse;
+            }
+        }
+
+        return $the_horse;
 
     }
 
@@ -201,7 +217,7 @@ class Equipe   {
     }
 
     public function have_starts() {
-        if ($this->current_start + 1 < $this->starts_count)
+        if ($this->current_start < $this->starts_count)
             return true;
 
         return false;

@@ -53,6 +53,7 @@ function equipe_api_html_page() {
                                value="<?php echo get_option('equipe_api_id'); ?>" class="regular-text"/>
                     </td>
                 </tr>
+
             </table>
 
             <input type="hidden" name="action" value="update" />
