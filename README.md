@@ -34,7 +34,7 @@ Get Timeschedule
 
 	$Equipe->get_startlist($class_id);
 
-	while($Equipe->startlist_has_riders()): $rider = $Equipe->startlist_the_rider();
+	while($Equipe->startlist_have_riders()): $rider = $Equipe->startlist_the_rider();
 
     	echo $rider->rider_name;
 
@@ -48,7 +48,7 @@ Get Resultlist
 
 	$Equipe->get_resultlist($class_id);
 
-	while($Equipe->resultlist_has_riders()): $rider = $Equipe->resultlist_the_rider();
+	while($Equipe->resultlist_have_riders()): $rider = $Equipe->resultlist_the_rider();
 
     	echo $rider->rider_name;
 
@@ -60,7 +60,7 @@ Get Riders
 *Takes Class ID*
 
 	$Equipe->get_riders($meeting_id);
-	while($Equipe->has_riders()): $rider = $Equipe->the_rider();
+	while($Equipe->have_riders()): $rider = $Equipe->the_rider();
 
     	echo $rider->name;
 
@@ -72,7 +72,7 @@ Get Horses
 *Takes Class ID*
 
 	$Equipe->get_horses($meeting_id);
-	while($Equipe->has_horses()): $horse = $Equipe->the_horse();
+	while($Equipe->have_horses()): $horse = $Equipe->the_horse();
 
     	echo $horse->name;
 
