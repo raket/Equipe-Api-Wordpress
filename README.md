@@ -77,6 +77,13 @@ Get Horses
     	echo $horse->name;
 
 	endwhile;
+	
+
+Get Horse
+--------------	
+*Takes Meeting ID, Horse ID*
+
+	$horse = $Equipe->get_horse($rider->meeting_id, $rider->horse_id);
 
 
 Get Starts 
